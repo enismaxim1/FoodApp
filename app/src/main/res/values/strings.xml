@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FoodApp</string>
     <string name="confirmation_string">mission successful</string>
+    <string name="button1">Big Guau</string>
 </resources>
