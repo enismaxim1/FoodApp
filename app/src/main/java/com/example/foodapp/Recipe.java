@@ -5,7 +5,14 @@ import java.util.ArrayList;
 //This class creates a Recipe object
 public class Recipe {
 
+    /**
+     * The name of the recipe
+     */
     private String name;
+
+    /**
+     * The list
+     */
     private ArrayList<Ingredient> ingredients;
     ArrayList<Instruction> directions;
 
