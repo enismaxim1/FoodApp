@@ -15,4 +15,16 @@ public class Recipe {
         directions = steps;
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public ArrayList getIngredients(){
+        return ingredients;
+    }
+
+    public ArrayList getDirections(){
+        return directions;
+    }
+
 }
