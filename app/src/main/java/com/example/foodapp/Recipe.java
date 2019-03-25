@@ -11,11 +11,21 @@ public class Recipe {
     private String name;
 
     /**
-     * The list
+     * The list of ingredients
      */
     private ArrayList<Ingredient> ingredients;
-    ArrayList<Instruction> directions;
 
+    /**
+     * The list of instructions
+     */
+    private ArrayList<Instruction> directions;
+
+    /**
+     * Constructs a recipe given a name, list of ingredients, and list of instructions
+     * @param title the name of the recipe
+     * @param food the list of ingredients
+     * @param steps the list of instructions
+     */
     public Recipe(String title, ArrayList<Ingredient> food, ArrayList<Instruction> steps){
         name = title;
         ingredients = food;
