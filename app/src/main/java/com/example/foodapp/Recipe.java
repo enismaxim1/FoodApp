@@ -11,6 +11,11 @@ public class Recipe {
     private String name;
 
     /**
+     * The culture of the recipe
+     */
+    private String culture;
+
+    /**
      * The list of ingredients
      */
     private ArrayList<Ingredient> ingredients;
@@ -26,20 +31,41 @@ public class Recipe {
      * @param food the list of ingredients
      * @param steps the list of instructions
      */
-    public Recipe(String title, ArrayList<Ingredient> food, ArrayList<Instruction> steps){
+    public Recipe(String title, String category, ArrayList<Ingredient> food, ArrayList<Instruction> steps){
         name = title;
+        culture = category;
         ingredients = food;
         directions = steps;
     }
 
+    /**
+     * Gets the recipe name
+     * @return the name
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * Gets the culture of the recipe
+     * @return the culture of the recipe
+     */
+    public String getCulture(){
+        return name;
+    }
+
+    /**
+     * Gets the list of ingredients
+     * @return the list of ingredients
+     */
     public ArrayList getIngredients(){
         return ingredients;
     }
 
+    /**
+     * Gets the list of directions
+     * @return the list of directions
+     */
     public ArrayList getDirections(){
         return directions;
     }
