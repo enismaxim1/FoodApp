@@ -7,9 +7,9 @@ public class Recipe {
 
     private String name;
     private ArrayList<Ingredient> ingredients;
-    ArrayList<Step> directions;
+    ArrayList<Instruction> directions;
 
-    public Recipe(String title, ArrayList<Ingredient> food, ArrayList<Step> steps){
+    public Recipe(String title, ArrayList<Ingredient> food, ArrayList<Instruction> steps){
         name = title;
         ingredients = food;
         directions = steps;
