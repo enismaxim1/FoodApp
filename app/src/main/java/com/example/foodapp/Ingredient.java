@@ -29,5 +29,5 @@ public class Ingredient {
     public void setAmount(String amount){
         this.amount = amount;
     }
-    
+
 }
