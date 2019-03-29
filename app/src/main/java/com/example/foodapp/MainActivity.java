@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    database = FirebaseDatabase.getInstance().getReference();
-
-    private void writeNewRecipe(String recipeId, String title, String category, ArrayList<Ingredient> food, ArrayList<Instruction> steps) {
-        Recipe recipe = new Recipe(title, category, food, steps);
-        mDatabase.child("recipes").child(recipeId).setValue(recipe);
-    }
 
     public void goToFeed(View v){
         Intent intent = new Intent(this, feedActivity.class);
