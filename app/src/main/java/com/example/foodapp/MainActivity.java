@@ -3,14 +3,10 @@ package com.example.foodapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
 
     }
-
-
     public void goToFeed(View v){
-        Intent intent = new Intent(this, NavigationActivity.class);
+        Intent intent = new Intent(this, feedActivity.class);
         startActivity(intent);
     }
 

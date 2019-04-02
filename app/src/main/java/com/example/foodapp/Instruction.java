@@ -22,4 +22,12 @@ public class Instruction {
         number = order;
         direction = description;
     }
+
+    /**
+     * Default constructor sets the first instruction as squeeze
+     */
+    public Instruction(){
+        number = 1;
+        direction = "squeeze";
+    }
 }
