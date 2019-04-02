@@ -3,20 +3,15 @@ package com.example.foodapp;
 //This class creates an Ingredient object
 public class Ingredient {
 
-    /**
-     * The name of the
-     */
     private String name;
     private String amount;
 
+    public Ingredient (){
+
+    }
     public Ingredient(String title, String quantity){
         name = title;
         amount = quantity;
-    }
-
-    public Ingredient(){
-        name = "lemon";
-        amount = "1";
     }
 
     public String getName(){
