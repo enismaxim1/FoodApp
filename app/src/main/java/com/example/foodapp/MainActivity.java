@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void goToFeed(View v){
-        Intent intent = new Intent(this, feedActivity.class);
+        Intent intent = new Intent(this, NavigationActivity.class);
         startActivity(intent);
     }
 
