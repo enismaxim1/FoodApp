@@ -7,15 +7,15 @@
         android:title="@string/item_1"
         app:showAsAction="never" />
 
-    <item android:id="@+id/item2"
+    <item
+        android:id="@+id/item2"
         android:icon="@drawable/ic_icon"
         android:title="@string/item_2"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/item3"
+    <item
+        android:id="@+id/item3"
         android:icon="@drawable/ic_icon"
         android:title="@string/item_3"
-        app:showAsAction="never">
-
-    </item>
+        app:showAsAction="never" />
 </menu>
