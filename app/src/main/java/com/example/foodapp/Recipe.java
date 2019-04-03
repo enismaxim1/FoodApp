@@ -8,22 +8,22 @@ public class Recipe {
     /**
      * The name of the recipe
      */
-    private String name;
+    public String name;
 
     /**
      * The culture of the recipe
      */
-    private String culture;
+    public String culture;
 
     /**
      * The list of ingredients
      */
-    private ArrayList<Ingredient> ingredients;
+    public ArrayList<Ingredient> ingredients;
 
     /**
      * The list of instructions
      */
-    private ArrayList<Instruction> directions;
+    public ArrayList<Instruction> directions;
 
     /**
      * Constructs a recipe given a name, list of ingredients, and list of instructions
@@ -35,6 +35,20 @@ public class Recipe {
         name = title;
         culture = category;
         ingredients = food;
+        directions = steps;
+    }
+
+    /**
+     * Default constructor for a Lemon recipe
+     */
+    public Recipe(){
+        name = "Lemon";
+        culture = "Natural";
+        ArrayList<Ingredient> food = new ArrayList<Ingredient>();
+        food.add(new Ingredient());
+        ingredients = food;
+        ArrayList<Instruction> steps = new ArrayList<Instruction>();
+        steps.add(new Instruction());
         directions = steps;
     }
 

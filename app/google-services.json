@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "200444589059",
+    "firebase_url": "https://pocket-cook-5b8f3.firebaseio.com",
+    "project_id": "pocket-cook-5b8f3",
+    "storage_bucket": "pocket-cook-5b8f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200444589059:android:a7e79028f7042dab",
+        "android_client_info": {
+          "package_name": "com.example.foodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200444589059-giaueug0lv0vmiqaip9lhb68mfl4vpi3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.foodapp",
+            "certificate_hash": "16517677adcb847ec6c2985d6b01d319f063830e"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcPX5BDS-8Q9lNeH_lvaFzuA9R24x34Wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200444589059-jrbcfs3r5fj41siivimvjm26k13o3jts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

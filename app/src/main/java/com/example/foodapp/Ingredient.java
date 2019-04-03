@@ -4,25 +4,45 @@ package com.example.foodapp;
 public class Ingredient {
 
     /**
-     * The name of the
+     * the name of the ingredient
      */
-    private String name;
-    private String amount;
+    public String name;
 
+    /**
+     * the amount of the ingredient
+     */
+    public String amount;
+
+    /**
+     * Constructs an ingredient given a title and quantity
+     * @param title the name of ingredient
+     * @param quantity the amount of ingredient
+     */
     public Ingredient(String title, String quantity){
         name = title;
         amount = quantity;
     }
 
+    /**
+     * Default constructor for an ingredient is a lemon
+     */
     public Ingredient(){
         name = "lemon";
         amount = "1";
     }
 
+    /**
+     * Gets the name of ingredient
+     * @return
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * Gets the amount of ingredient
+     * @return
+     */
     public String getAmount(){
         return amount;
     }
