@@ -65,6 +65,9 @@ public class NavigationActivity extends AppCompatActivity
                 break;
             case R.id.item3:
                 break;
+            case R.id.settings:
+                intent = new Intent(this, SettingsActivity.class);
+                this.startActivity(intent);
         }
         return true;
     }
@@ -83,17 +86,20 @@ public class NavigationActivity extends AppCompatActivity
             case (R.id.search):
                 Toast searchToast = Toast.makeText(context, "Will lead to search engine", Toast.LENGTH_SHORT);
                 searchToast.show();
-                break;
 
             case (R.id.profile):
                 Toast profileToast = Toast.makeText(context, "Will lead to profile", Toast.LENGTH_SHORT);
                 profileToast.show();
-                break;
 
             case(R.id.my_recipes):
                 Toast recipesToast = Toast.makeText(context, "Will lead to saved recipes", Toast.LENGTH_SHORT);
                 recipesToast.show();
-                break;
+
+            case(R.id.add_recipes):
+                Toast addRecipeToast = Toast.makeText(context, "will lead to add recipes", Toast.LENGTH_SHORT);
+                addRecipeToast.show();
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
