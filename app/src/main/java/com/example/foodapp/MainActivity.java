@@ -8,6 +8,7 @@ import android.view.View;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -16,12 +17,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//     Write a message to the database
+
+        writeNewRecipe("lemon", new Recipe());
+        writeNewRecipe("lime", new Recipe());
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
 
     }
+
+
+    private void writeNewRecipe(String recipeId, Recipe r) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+        ref.child("recipes").child(recipeId).setValue(r);
+    }
+
     public void goToFeed(View v){
         Intent intent = new Intent(this, NavigationActivity.class);
         startActivity(intent);
