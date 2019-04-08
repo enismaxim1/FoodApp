@@ -8,22 +8,22 @@ public class Recipe {
     /**
      * The name of the recipe
      */
-    public String name;
+    private String name;
 
     /**
      * The culture of the recipe
      */
-    public String culture;
+    private String culture;
 
     /**
      * The list of ingredients
      */
-    public ArrayList<Ingredient> ingredients;
+    private ArrayList<Ingredient> ingredients;
 
     /**
      * The list of instructions
      */
-    public ArrayList<Instruction> directions;
+    private ArrayList<Instruction> directions;
 
     /**
      * Constructs a recipe given a name, list of ingredients, and list of instructions
@@ -65,7 +65,7 @@ public class Recipe {
      * @return the culture of the recipe
      */
     public String getCulture(){
-        return name;
+        return culture;
     }
 
     /**

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddRecipe">
+
+    <LinearLayout
+        android:id="@+id/addRecipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/add_recipe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/recipe_name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/add_recipe_culture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/recipe_culture"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ingredient1_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ingredient"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ingredient1_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ingredient_amount"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/addIngredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_another_ingredient" />
+
+        <EditText
+            android:id="@+id/instruction1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/instruction"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/addInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_another_instruction" />
+
+        <Button
+            android:id="@+id/SaveRecipe"
+            android:onClick="saveRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_recipe" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

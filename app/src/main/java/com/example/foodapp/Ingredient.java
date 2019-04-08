@@ -6,12 +6,12 @@ public class Ingredient {
     /**
      * the name of the ingredient
      */
-    public String name;
+    private String name;
 
     /**
      * the amount of the ingredient
      */
-    public String amount;
+    private String amount;
 
     /**
      * Constructs an ingredient given a title and quantity
@@ -33,7 +33,7 @@ public class Ingredient {
 
     /**
      * Gets the name of ingredient
-     * @return
+     * @return the name of the ingredient
      */
     public String getName(){
         return name;
@@ -41,16 +41,24 @@ public class Ingredient {
 
     /**
      * Gets the amount of ingredient
-     * @return
+     * @return the amount of the ingredient
      */
     public String getAmount(){
         return amount;
     }
 
+    /**
+     * Sets the name of the ingredient
+     * @param name the name of the ingredient
+     */
     public void setName(String name){
         this.name = name;
     }
 
+    /**
+     * Sets the amount of the ingredient
+     * @param amount the amount of the ingredient
+     */
     public void setAmount(String amount){
         this.amount = amount;
     }

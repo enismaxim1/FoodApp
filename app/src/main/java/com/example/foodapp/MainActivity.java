@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void writeNewRecipe(String recipeId, Recipe r) {
+    public static void writeNewRecipe(String recipeId, Recipe r) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
         ref.child("recipes").child(recipeId).setValue(r);

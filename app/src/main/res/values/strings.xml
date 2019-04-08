@@ -17,5 +17,13 @@
     <string name="item_1">Item 1</string>
     <string name="item_2">Item 2</string>
     <string name="item_3">Item 3</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="recipe_culture">Recipe culture</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="instruction">Instruction</string>
+    <string name="ingredient_amount">Ingredient amount</string>
+    <string name="add_another_ingredient">Add another ingredient</string>
+    <string name="add_another_instruction">Add another instruction</string>
+    <string name="save_recipe">Save Recipe</string>
 
 </resources>
