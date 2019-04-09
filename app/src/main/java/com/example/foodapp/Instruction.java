@@ -8,12 +8,12 @@ public class Instruction {
     /**
      * Describes the order this instruction should be read/performed
      */
-    private int number;
+    public int number;
 
     /**
      * Describes the action a user should perform for one step of the recipe
      */
-    private String direction;
+    public String direction;
 
     /**
      * Constructs an instruction given the number order and the description
@@ -30,5 +30,12 @@ public class Instruction {
      */
     public Instruction(){
 
+    }
+    public int getNumber(){
+        return number;
+    }
+
+    public String getDirection(){
+        return direction;
     }
 }

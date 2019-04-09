@@ -22,18 +22,18 @@ public class NavigationActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        Toolbar toolbar =  findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
 
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView =  findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -58,9 +58,7 @@ public class NavigationActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.item1:
-                Intent intent = new Intent(this, feedActivity.class);
-                this.startActivity(intent);
-                return true;
+                break;
             case R.id.item2:
                 break;
             case R.id.item3:
@@ -85,17 +83,20 @@ public class NavigationActivity extends AppCompatActivity
             case (R.id.search):
                 Toast searchToast = Toast.makeText(context, "Will lead to search engine", Toast.LENGTH_SHORT);
                 searchToast.show();
-                break;
 
             case (R.id.profile):
                 Toast profileToast = Toast.makeText(context, "Will lead to profile", Toast.LENGTH_SHORT);
                 profileToast.show();
-                break;
 
             case(R.id.my_recipes):
                 Toast recipesToast = Toast.makeText(context, "Will lead to saved recipes", Toast.LENGTH_SHORT);
                 recipesToast.show();
-                break;
+
+            case(R.id.add_recipes):
+                Intent intent = new Intent(this, AddRecipe.class);
+                this.startActivity(intent);
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
