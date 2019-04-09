@@ -11,6 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AddRecipe"></activity>
         <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
