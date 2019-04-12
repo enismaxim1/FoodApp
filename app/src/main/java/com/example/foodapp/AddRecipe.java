@@ -1,6 +1,7 @@
 package com.example.foodapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -102,9 +103,12 @@ public class AddRecipe extends AppCompatActivity {
      * @param v view v
      */
     public void saveRecipe(View v){
+
         getIngredient();
         getInstruction();
         addRecipe();
+        Intent intent = new Intent(this, NavigationActivity.class);
+        startActivity(intent);
     }
 
 }

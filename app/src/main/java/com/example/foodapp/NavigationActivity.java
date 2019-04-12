@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,10 +15,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+import static com.example.foodapp.MainActivity.recipes;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static String TAG = "NavigationActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +40,15 @@ public class NavigationActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
+
+        MainActivity.readRecipe();
+
+        TextView text = findViewById(R.id.recipe);
+        String a = "";
+        for(int i=0; i<recipes.size(); i++){
+            a+=recipes.get(i).getName();
+        }
+        text.setText(a);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,7 +87,11 @@ public class NavigationActivity extends AppCompatActivity
             case R.id.item3:
                 Intent intent3 = new Intent(this, AddRecipe.class);
                 this.startActivity(intent3);
-                return true;
+                break;
+            case R.id.settings:
+                Intent intentSettings = new Intent(this, SettingsActivity.class);
+                this.startActivity(intentSettings);
+                break;
         }
         return true;
     }
@@ -83,18 +110,22 @@ public class NavigationActivity extends AppCompatActivity
             case (R.id.search):
                 Toast searchToast = Toast.makeText(context, "Will lead to search engine", Toast.LENGTH_SHORT);
                 searchToast.show();
+                break;
 
             case (R.id.profile):
                 Toast profileToast = Toast.makeText(context, "Will lead to profile", Toast.LENGTH_SHORT);
                 profileToast.show();
+                break;
 
             case(R.id.my_recipes):
                 Toast recipesToast = Toast.makeText(context, "Will lead to saved recipes", Toast.LENGTH_SHORT);
                 recipesToast.show();
+                break;
 
             case(R.id.add_recipes):
                 Intent intent = new Intent(this, AddRecipe.class);
                 this.startActivity(intent);
+                break;
 
 
         }
@@ -103,6 +134,7 @@ public class NavigationActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 
 }

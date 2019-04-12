@@ -9,8 +9,7 @@
     tools:showIn="@layout/app_bar_navigation">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/recipe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/guau" />
+        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>
