@@ -84,4 +84,24 @@ public class Recipe {
         return directions;
     }
 
+    /**
+     * Sets the list of directions
+     */
+    public void setDirections(ArrayList<Instruction> input){directions = input;}
+
+    /**
+     * Sets the list of directions
+     */
+    public void setName(String input){name = input;}
+
+    /**
+     * Sets the list of directions
+     */
+    public void setCulture(String input){culture = input;}
+
+    /**
+     * Sets the list of directions
+     */
+    public void setIngredients(ArrayList<Ingredient> input){ingredients = input;}
+
 }

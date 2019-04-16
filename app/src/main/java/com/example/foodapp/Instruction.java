@@ -26,16 +26,20 @@ public class Instruction {
     }
 
     /**
-     * Empty constructor for a new instruction
+     * Default constructor sets the first instruction as squeeze
      */
     public Instruction(){
-
-    }
-    public int getNumber(){
-        return number;
+        number = 2;
+        direction = "squeeze";
     }
 
-    public String getDirection(){
-        return direction;
-    }
+    public int getNumber() {return number;}
+
+    public String getDirection() {return direction;}
+
+    /**
+     * Empty constructor for a new instruction
+     */
+
+
 }
