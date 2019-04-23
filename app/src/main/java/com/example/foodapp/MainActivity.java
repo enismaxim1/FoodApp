@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        writeNewRecipe("lemon", new Recipe());
         writeNewRecipe("lime", new Recipe());
         readRecipe();
 
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         })  ;
     }
+
 
     public void goToFeed(View v){
         Intent intent = new Intent(this, NavigationActivity.class);
