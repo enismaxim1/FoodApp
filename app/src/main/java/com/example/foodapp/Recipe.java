@@ -72,7 +72,7 @@ public class Recipe {
      * Gets the list of ingredients
      * @return the list of ingredients
      */
-    public ArrayList getIngredients(){
+    public ArrayList<Ingredient> getIngredients(){
         return ingredients;
     }
 
@@ -80,7 +80,7 @@ public class Recipe {
      * Gets the list of directions
      * @return the list of directions
      */
-    public ArrayList getDirections(){
+    public ArrayList<Instruction> getDirections(){
         return directions;
     }
 

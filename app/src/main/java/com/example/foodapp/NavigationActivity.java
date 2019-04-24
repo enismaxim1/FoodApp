@@ -99,6 +99,14 @@ public class NavigationActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        MainActivity.readRecipe();
+
+        TextView text = findViewById(R.id.recipe);
+        String a = "";
+        for(int i=0; i<recipes.size(); i++){
+            a+=recipes.get(i).getName();
+        }
+        text.setText(a);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -144,8 +152,8 @@ public class NavigationActivity extends AppCompatActivity
         switch(id){
 
             case (R.id.search):
-                Toast searchToast = Toast.makeText(context, "Will lead to search engine", Toast.LENGTH_SHORT);
-                searchToast.show();
+                Intent searchIntent = new Intent(this, SearchActivity.class);
+                this.startActivity(searchIntent);
                 break;
 
             case (R.id.profile):
@@ -159,8 +167,8 @@ public class NavigationActivity extends AppCompatActivity
                 break;
 
             case(R.id.add_recipes):
-                Intent intent = new Intent(this, AddRecipe.class);
-                this.startActivity(intent);
+                Intent recipeIntent = new Intent(this, AddRecipe.class);
+                this.startActivity(recipeIntent);
                 break;
 
 
