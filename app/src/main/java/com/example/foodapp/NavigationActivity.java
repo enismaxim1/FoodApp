@@ -101,12 +101,12 @@ public class NavigationActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         MainActivity.readRecipe();
 
-        TextView text = findViewById(R.id.recipe);
+        //TextView text = findViewById(R.id.recipe);
         String a = "";
         for(int i=0; i<recipes.size(); i++){
             a+=recipes.get(i).getName();
         }
-        text.setText(a);
+        //text.setText(a);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
