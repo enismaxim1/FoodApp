@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -25,12 +27,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.foodapp.MainActivity.recipes;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public static String TAG = "NavigationActivity";
+
+
+    RecyclerView recyclerView;
+    ShowRecipeAdapter adapter;
+    List<Recipe> recipeList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +52,12 @@ public class NavigationActivity extends AppCompatActivity
 
         MainActivity.readRecipe();
 
-        TextView text = findViewById(R.id.recipe);
+       // TextView text = findViewById(R.id.recipe);
         String a = "";
         for(int i=0; i<recipes.size(); i++){
             a+=recipes.get(i).getName();
         }
-        text.setText(a);
+      //  text.setText(a);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,6 +67,33 @@ public class NavigationActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        /**
+         * RecyclerView code
+         */
+        recipeList = new ArrayList();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        ArrayList<Ingredient> ingredients = new ArrayList();
+        ArrayList<Instruction> instructions = new ArrayList();
+        Instruction one = new Instruction(1,"Cut lemons in half");
+        Instruction two = new Instruction(2,"Squeeze lemons in pitcher");
+        Instruction three = new Instruction(3,"Chug");
+        instructions.add(one); instructions.add(two); instructions.add(three);
+        Ingredient lemon = new Ingredient("Lemon","1");
+        Ingredient pitcher = new Ingredient("Pitcher","1");
+        ingredients.add(lemon);
+        ingredients.add(lemon);
+        ingredients.add(pitcher);
+        Recipe lemonade = new Recipe("Lemonade", "Drink", ingredients, instructions);
+        recipeList.add(lemonade);
+        recipeList.add(new Recipe());
+
+        adapter = new ShowRecipeAdapter(this, recipeList);
+        recyclerView.setAdapter(adapter);
+
+
     }
 
     @Override
