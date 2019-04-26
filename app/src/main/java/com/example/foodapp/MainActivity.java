@@ -28,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
         writeNewRecipe("lime", new Recipe());
         readRecipe();
 
+
+        ArrayList<Ingredient> ingredients = new ArrayList();
+        ArrayList<Instruction> instructions = new ArrayList();
+        Instruction one = new Instruction(1,"Cut lemons in half");
+        Instruction two = new Instruction(2,"Squeeze lemons in pitcher");
+        Instruction three = new Instruction(3,"Chug");
+        instructions.add(one); instructions.add(two); instructions.add(three);
+        Ingredient lemon = new Ingredient("Lemon","1");
+        Ingredient pitcher = new Ingredient("Pitcher","1");
+        ingredients.add(lemon);
+        ingredients.add(lemon);
+        ingredients.add(pitcher);
+        Recipe lemonade = new Recipe("Lemonade", "Drink", ingredients, instructions);
+
+        writeNewRecipe("ade", lemonade);
     }
 
 
