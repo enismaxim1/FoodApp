@@ -6,12 +6,12 @@ public class Ingredient {
     /**
      * the name of the ingredient
      */
-    private String name;
+    public String name;
 
     /**
      * the amount of the ingredient
      */
-    private String amount;
+    public String amount;
 
     /**
      * Constructs an ingredient given a title and quantity
@@ -63,4 +63,7 @@ public class Ingredient {
         this.amount = amount;
     }
 
+   public String toString(){
+        return amount + " " + name;
+   }
 }

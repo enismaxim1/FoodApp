@@ -41,5 +41,9 @@ public class Instruction {
      * Empty constructor for a new instruction
      */
 
+    public String toString(){
+        return direction;
+    }
+
 
 }
