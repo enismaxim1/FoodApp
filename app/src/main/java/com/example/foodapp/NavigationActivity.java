@@ -36,9 +36,7 @@ public class NavigationActivity extends AppCompatActivity
     public static String TAG = "NavigationActivity";
 
 
-    RecyclerView recyclerView;
-    ShowRecipeAdapter adapter;
-    List<Recipe> recipeList;
+
 
 
     @Override
@@ -71,26 +69,14 @@ public class NavigationActivity extends AppCompatActivity
 
         /**
          * RecyclerView code
-         */
-        recipeList = new ArrayList();
+         **/
+        RecyclerView recyclerView;
+        ShowRecipeAdapter adapter;
+        List<Recipe> recipeList;
+        recipeList = MainActivity.recipes;
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<Ingredient> ingredients = new ArrayList();
-        ArrayList<Instruction> instructions = new ArrayList();
-        Instruction one = new Instruction(1,"Cut lemons in half");
-        Instruction two = new Instruction(2,"Squeeze lemons in pitcher");
-        Instruction three = new Instruction(3,"Chug");
-        instructions.add(one); instructions.add(two); instructions.add(three);
-        Ingredient lemon = new Ingredient("Lemon","1");
-        Ingredient pitcher = new Ingredient("Pitcher","1");
-        ingredients.add(lemon);
-        ingredients.add(lemon);
-        ingredients.add(pitcher);
-        Recipe lemonade = new Recipe("Lemonade", "Drink", ingredients, instructions);
-        recipeList.add(lemonade);
-        recipeList.add(new Recipe());
-
         adapter = new ShowRecipeAdapter(this, recipeList);
         recyclerView.setAdapter(adapter);
 
