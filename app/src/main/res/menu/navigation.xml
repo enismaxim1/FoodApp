@@ -2,26 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item1"
+        android:id="@+id/advanced_search"
         android:icon="@drawable/ic_icon"
-        android:title="@string/item_1"
+        android:title="@string/advanced_search"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/item2"
-        android:icon="@drawable/ic_icon"
-        android:title="@string/item_2"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/item3"
-        android:icon="@drawable/ic_icon"
-        android:title="@string/item_3"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_icon"
-        android:title="Settings"
-        app:showAsAction="never" />
 </menu>

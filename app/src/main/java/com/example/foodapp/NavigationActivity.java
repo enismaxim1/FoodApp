@@ -80,7 +80,6 @@ public class NavigationActivity extends AppCompatActivity
         adapter = new ShowRecipeAdapter(this, recipeList);
         recyclerView.setAdapter(adapter);
 
-
     }
 
     @Override
@@ -101,31 +100,7 @@ public class NavigationActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.navigation, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case R.id.item1:
-                break;
-            case R.id.item2:
-                break;
-            case R.id.item3:
-                Intent intent3 = new Intent(this, AddRecipe.class);
-                this.startActivity(intent3);
-                break;
-            case R.id.settings:
-                Intent intentSettings = new Intent(this, SettingsActivity.class);
-                this.startActivity(intentSettings);
-                break;
-        }
-        return true;
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
