@@ -1,6 +1,7 @@
 package com.example.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -23,7 +24,6 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
         this.mCtx = mCtx;
         this.recipeList = recipeList;
     }
-
 
 
     @NonNull
@@ -52,23 +52,34 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
         return recipeList.size();
     }
 
-    class RecipeViewHolder extends RecyclerView.ViewHolder{
+    class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         //ImageView image;
+        View view;
         TextView name;
         TextView culture;
 
 
         public RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
+
             //image = itemView.findViewById(R.id.imageView);
+            view = itemView;
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override public void onClick(View v) {
+                    openRecipe();
+                }
+            });
+
             name = itemView.findViewById(R.id.textViewName);
             culture = itemView.findViewById(R.id.textViewRating);
-
         }
+
+    }
+
+    public void openRecipe(){
+        Intent intent = new Intent(mCtx, FullRecipe.class);
+        mCtx.startActivity(intent);
     }
 
 }
-
-
-
