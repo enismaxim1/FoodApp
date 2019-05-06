@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SimpleSearchActivity"></activity>
+        <activity android:name=".AdvancedSearchActivity"></activity>
         <activity android:name=".AddRecipe" />
         <activity android:name=".SearchActivity" />
         <activity
