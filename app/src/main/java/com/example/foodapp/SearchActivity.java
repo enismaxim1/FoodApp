@@ -56,7 +56,7 @@ public class SearchActivity extends AppCompatActivity {
             Log.d(TAG, "step 3, findWithIngredients " + currentFilter.size());
         }
         if (excludeIngredientNames!= null && (!excludeIngredientNames.isEmpty())) {
-            currentFilter = excludeIngredients(excludeIngredientNames, MainActivity.recipes);
+            currentFilter = excludeIngredients(excludeIngredientNames, currentFilter);
             Log.d(TAG, "step 4 " + currentFilter.size());
         }
 
