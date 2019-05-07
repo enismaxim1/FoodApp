@@ -26,7 +26,7 @@
                 android:contentDescription="Recipe Image"
                 android:padding="2dp"
 
-                app:srcCompat="@drawable/lemon" />
+                app:srcCompat="@drawable/plate" />
 
             <TextView
                 android:id="@+id/textViewName"
