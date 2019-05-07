@@ -12,6 +12,7 @@
         <activity android:name=".AdvancedSearchActivity"></activity>
         <activity android:name=".AddRecipe" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".FullRecipe" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />

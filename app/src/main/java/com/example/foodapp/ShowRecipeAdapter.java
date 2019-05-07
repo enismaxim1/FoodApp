@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -44,6 +47,13 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
         holder.culture.setText(recipe.getCulture());
         //holder.image.setImageDrawable(mCtx.getResources().getDrawable(lemon));
 
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(mCtx, FullRecipe.class);
+                mCtx.startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -55,31 +65,26 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
     class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         //ImageView image;
-        View view;
         TextView name;
         TextView culture;
+        CardView card;
+
 
 
         public RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
 
             //image = itemView.findViewById(R.id.imageView);
-            view = itemView;
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    openRecipe();
-                }
-            });
 
             name = itemView.findViewById(R.id.textViewName);
             culture = itemView.findViewById(R.id.textViewRating);
+            card = (CardView)itemView.findViewById(R.id.cardView);
+
         }
 
     }
 
-    public void openRecipe(){
-        Intent intent = new Intent(mCtx, FullRecipe.class);
-        mCtx.startActivity(intent);
-    }
+
+
 
 }
