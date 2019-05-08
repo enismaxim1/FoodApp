@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,10 @@ import java.util.List;
 
 
 public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.RecipeViewHolder> {
-
+    public static Recipe r;
+    public static String TAG = "ShowRecipeAdapter";
     private Context mCtx;
-    private List<Recipe> recipeList;
+    public static List<Recipe> recipeList;
 
     public ShowRecipeAdapter(Context mCtx, List recipeList) {
         this.mCtx = mCtx;
@@ -41,18 +43,17 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
-        final Recipe recipe = recipeList.get(position);
-
-        holder.name.setText(recipe.getName());
-        holder.culture.setText(recipe.getCulture());
+        final int pos = position;
+        r = recipeList.get(position);
+        holder.name.setText(r.getName());
+        holder.culture.setText(r.getCulture());
         //holder.image.setImageDrawable(mCtx.getResources().getDrawable(lemon));
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(mCtx, FullRecipe.class);
-                //intent.putExtra("ingredients", recipe.getIngredients());
+                intent.putExtra("position", pos);
                 mCtx.startActivity(intent);
-
             }
         });
 

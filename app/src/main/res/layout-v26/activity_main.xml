@@ -20,19 +20,9 @@
         <ImageView
             android:id="@+id/app_logo"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="400dp"
             android:contentDescription="@string/app_logo"
             android:src="@drawable/ic_app" />
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/username"
-            android:inputType="textPersonName" />
 
         <Space
             android:id="@+id/space1"
@@ -40,27 +30,11 @@
             android:layout_height="20dp"
             android:layout_weight="0" />
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
-
         <Space
             android:id="@+id/space2"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_weight="0" />
-
-        <Button
-            android:id="@+id/signIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_in" />
 
         <Space
             android:id="@+id/space3"
@@ -74,21 +48,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/signUp"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/sign_up" />
-
-            <Button
                 android:id="@+id/guest"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="goToFeed"
-                android:text="@string/proceed_as_guest" />
+                android:text="Proceed" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

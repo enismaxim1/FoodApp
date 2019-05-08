@@ -22,7 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="TextView"
                 android:textColor="#710505"
                 android:textSize="36sp" />
 
@@ -40,17 +39,15 @@
 
             <TextView
                 android:id="@+id/ingredient"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:id="@+id/direction"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginTop="10dp" />
         </LinearLayout>
     </ScrollView>
 

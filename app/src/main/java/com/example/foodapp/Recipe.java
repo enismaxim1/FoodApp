@@ -2,6 +2,7 @@ package com.example.foodapp;
 
 import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 //This class creates a Recipe object
