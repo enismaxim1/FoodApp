@@ -105,5 +105,7 @@
     <string name="ingredient_name">Ingredient Name</string>
     <string name="blease" />
     <string name="advanced_search">Advanced Search</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="instructions">Instructions:</string>
 
 </resources>

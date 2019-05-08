@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 //This class creates a Recipe object
-public class Recipe {
+public class Recipe implements Serializable {
 
     /**
      * The name of the recipe
