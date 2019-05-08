@@ -197,7 +197,7 @@ public class AddRecipe extends AppCompatActivity {
             add_recipe_instruction.setError("Required Input");
         }
 
-        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(culture) || TextUtils.isEmpty(ingName) || TextUtils.isEmpty(amount) || TextUtils.isEmpty(instruction)){
+        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(culture) ||ingredients.isEmpty() || instructions.isEmpty() ){
             return "error";
         }
 
