@@ -41,7 +41,7 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
-        Recipe recipe = recipeList.get(position);
+        final Recipe recipe = recipeList.get(position);
 
         holder.name.setText(recipe.getName());
         holder.culture.setText(recipe.getCulture());
@@ -50,7 +50,9 @@ public class ShowRecipeAdapter extends RecyclerView.Adapter<ShowRecipeAdapter.Re
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(mCtx, FullRecipe.class);
+                //intent.putExtra("ingredients", recipe.getIngredients());
                 mCtx.startActivity(intent);
+
             }
         });
 
