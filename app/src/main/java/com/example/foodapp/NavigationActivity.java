@@ -121,16 +121,16 @@ public class NavigationActivity extends AppCompatActivity
                 Intent searchIntent = new Intent(this, SearchActivity.class);
                 this.startActivity(searchIntent);
                 break;
-
-            case (R.id.profile):
-                Toast profileToast = Toast.makeText(context, "Will lead to profile", Toast.LENGTH_SHORT);
-                profileToast.show();
-                break;
-
-            case(R.id.my_recipes):
-                Toast recipesToast = Toast.makeText(context, "Will lead to saved recipes", Toast.LENGTH_SHORT);
-                recipesToast.show();
-                break;
+//
+//            case (R.id.profile):
+//                Toast profileToast = Toast.makeText(context, "Will lead to profile", Toast.LENGTH_SHORT);
+//                profileToast.show();
+//                break;
+//
+//            case(R.id.my_recipes):
+//                Toast recipesToast = Toast.makeText(context, "Will lead to saved recipes", Toast.LENGTH_SHORT);
+//                recipesToast.show();
+//                break;
 
             case(R.id.add_recipes):
                 Intent recipeIntent = new Intent(this, AddRecipe.class);

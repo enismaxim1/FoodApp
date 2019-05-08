@@ -35,7 +35,7 @@ public class FullRecipe extends AppCompatActivity {
             ingredientView.append(i.toString() + "\n");
         }
         for (int i=0; i<directions.size();i++){
-            directionView.append((i+1) + "." + directions.get(i).getDirection() + "\n");
+            directionView.append((i+1) + ". " + directions.get(i).getDirection() + "\n");
         }
         Log.d(TAG, "QQG" + r.getName());
 
