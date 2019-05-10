@@ -23,10 +23,13 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList<String> ingredientNames = null;
     ArrayList<String> excludeIngredientNames = null;
     boolean searchOnly;
+    boolean makeEmpty = true;
+    //above boolean makes the screen empty if you enter from NavigationActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getSupportActionBar().hide();
         setContentView(R.layout.activity_search);
 
         getIntent();
@@ -35,10 +38,15 @@ public class SearchActivity extends AppCompatActivity {
         ingredientNames = getIntent().getStringArrayListExtra("ingredientNames");
         excludeIngredientNames = getIntent().getStringArrayListExtra("excludeIngredientNames");
         searchOnly = getIntent().getBooleanExtra("searchOnly", false);
-
+        makeEmpty = getIntent().getBooleanExtra("makeEmpty", true);
 
         MainActivity.readRecipe();
-        ArrayList<Recipe> currentFilter = (ArrayList<Recipe>) MainActivity.recipes.clone();
+        //currentFilter filters out the recipe arraylist until only recipes that satisfy the search parameters remain
+        ArrayList<Recipe> currentFilter = new ArrayList<Recipe>();
+        //assigns nullvalue to currentFilter unless this activity was reached by AdvancedSearchActivity
+        if (!makeEmpty){
+            currentFilter = (ArrayList<Recipe>) MainActivity.recipes.clone();
+        }
         if (recipeName != null && !(recipeName.isEmpty())) {
             currentFilter = searchByName(recipeName, currentFilter);
             Log.d(TAG, "step 1 " + currentFilter.size());

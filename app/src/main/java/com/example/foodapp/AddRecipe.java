@@ -39,6 +39,7 @@ public class AddRecipe extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getSupportActionBar().hide();
         setContentView(R.layout.activity_add_recipe);
         @SuppressLint("WrongViewCast") TextView instructionsList= findViewById(R.id.instructions_list);
         instructionsList.setText("Instructions List: " );

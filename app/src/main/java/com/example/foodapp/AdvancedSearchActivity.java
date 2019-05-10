@@ -25,12 +25,15 @@ public class AdvancedSearchActivity extends AppCompatActivity {
     ArrayList<String> ingredientNames = new ArrayList<>();
     ArrayList<String> excludeIngredientNames = new ArrayList<>();
     boolean searchOnly;
+    boolean makeEmpty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getSupportActionBar().hide();
         setContentView(R.layout.activity_advanced);
         getIntent();
+        //gets the current search value from the previous page
         String text = getIntent().getStringExtra("input");
         ingredientNames.clear();
         excludeIngredientNames.clear();
@@ -43,7 +46,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         TextView excludeIngredientsList = findViewById(R.id.ingredients_list2);
         excludeIngredientsList.setText("Ingredients List:");
     }
-
+    //adds an ingredient to the includesearch
     public void addIngredient(View v) {
         @SuppressLint("WrongViewCast") EditText add_ingredient_name = findViewById(R.id.ingredient1_name);
         String ingName = add_ingredient_name.getText().toString();
@@ -74,7 +77,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             ingredientsList.setText("Ingredients List: " + Arrays.toString(str));
         }
     }
-
+    //adds an ingredient to the excludesearch
     public void excludeIngredient(View v) {
         @SuppressLint("WrongViewCast") EditText add_ingredient_name = findViewById(R.id.ingredient2_name);
         String ingName = add_ingredient_name.getText().toString();
@@ -105,7 +108,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             ingredientsList2.setText("Ingredients List: " + Arrays.toString(str));
         }
     }
-
+    //onclick of the search button
     public void initiateSearch(View v){
         EditText name = findViewById(R.id.recipe_name);
         recipeName = name.getText().toString();
@@ -117,6 +120,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         }  else {
             searchOnly = true;
         }
+        makeEmpty = false;
         Log.d(TAG, button.isChecked() +"");
         Log.d(TAG, searchOnly +"");
         Intent intent = new Intent(this, SearchActivity.class);
@@ -125,6 +129,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         intent.putExtra("ingredientNames", ingredientNames);
         intent.putExtra("excludeIngredientNames", excludeIngredientNames);
         intent.putExtra("searchOnly", searchOnly);
+        intent.putExtra("makeEmpty", makeEmpty);
         startActivity(intent);
     }
 
