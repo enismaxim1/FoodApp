@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         readRecipe();
 
 
-        ArrayList<Ingredient> ingredients = new ArrayList();
-        ArrayList<Instruction> instructions = new ArrayList();
+        ArrayList<Ingredient> ingredients = new ArrayList<>();
+        ArrayList<Instruction> instructions = new ArrayList<>();
         Instruction one = new Instruction(1,"Cut lemons in half");
         Instruction two = new Instruction(2,"Squeeze lemons in pitcher");
         Instruction three = new Instruction(3,"Chug");
@@ -45,12 +45,21 @@ public class MainActivity extends AppCompatActivity {
         writeNewRecipe("ade", lemonade);
     }
 
-
+    /**
+     *
+     * @param recipeId an id for the recipe
+     * @param r a recipe
+     * adds the recipe r to the database
+     */
     public static void writeNewRecipe(String recipeId, Recipe r) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
         ref.child("recipes").child(recipeId).setValue(r);
     }
+
+    /**
+     *Takes in all recipes from the database and adds them tot he arraylist MainActivity.recipes
+     */
     public static void readRecipe() {
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();

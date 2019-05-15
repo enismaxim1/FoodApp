@@ -27,6 +27,7 @@
     <string name="add_another_instruction">Add another instruction</string>
     <string name="save_recipe">Save Recipe</string>
     <string name="app_logo">app logo</string>
+    <string name="advanced_search">Advanced Search</string>
 
     <!-- Strings related to Settings -->
 
@@ -104,8 +105,8 @@
     <string name="next_ingredient">Next Ingredient</string>
     <string name="ingredient_name">Ingredient Name</string>
     <string name="blease" />
-    <string name="advanced_search">Advanced Search</string>
     <string name="ingredients">Ingredients:</string>
     <string name="instructions">Instructions:</string>
+    <string name="search_for_recipe">Search for Recipe</string>
 
 </resources>

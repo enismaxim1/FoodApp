@@ -42,8 +42,10 @@ public class SearchActivity extends AppCompatActivity {
 
         MainActivity.readRecipe();
         //currentFilter filters out the recipe arraylist until only recipes that satisfy the search parameters remain
-        ArrayList<Recipe> currentFilter = new ArrayList<Recipe>();
+        ArrayList<Recipe> currentFilter = new ArrayList<>();
         //assigns nullvalue to currentFilter unless this activity was reached by AdvancedSearchActivity
+        //the following statements filter from MainActivity.recipes until all search parameters from
+        //AdvancedSearchActivity are satisfied
         if (!makeEmpty){
             currentFilter = (ArrayList<Recipe>) MainActivity.recipes.clone();
         }
@@ -72,11 +74,12 @@ public class SearchActivity extends AppCompatActivity {
             ShowRecipeAdapter adapter;
             List<Recipe> recipeList;
             recipeList = currentFilter;
-            recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+            recyclerView = findViewById(R.id.recyclerView);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             adapter = new ShowRecipeAdapter(this, recipeList);
             recyclerView.setAdapter(adapter);
+            //shows results of filters onto the screen
 
     }
 
@@ -88,7 +91,7 @@ public class SearchActivity extends AppCompatActivity {
         ShowRecipeAdapter adapter;
         List<Recipe> recipeList;
         recipeList = searchByName(text, MainActivity.recipes);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ShowRecipeAdapter(this, recipeList);
@@ -99,7 +102,7 @@ public class SearchActivity extends AppCompatActivity {
 
     /**
      * @param s a string for the name search
-     * @return an arraylist of all recipes whose names are the same as s
+     * @return an arraylist of all recipes whose names are are similar to s
      */
     public ArrayList<Recipe> searchByName(String s, ArrayList<Recipe> base) {
         ArrayList<Recipe> ret = new ArrayList<>();
@@ -113,7 +116,7 @@ public class SearchActivity extends AppCompatActivity {
 
     /**
      * @param s a string
-     * @return
+     * @return an arraylist of recipes whose culture is similar to s
      */
     public ArrayList<Recipe> searchByCulture(String s, ArrayList<Recipe> base) {
         ArrayList<Recipe> ret = new ArrayList<>();

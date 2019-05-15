@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -45,6 +47,8 @@ public class AddRecipe extends AppCompatActivity {
         instructionsList.setText("Instructions List: " );
         @SuppressLint("WrongViewCast") TextView ingredientsList= findViewById(R.id.ingredients_list);
         ingredientsList.setText("Ingredients List:");
+        ingredients.clear();
+        instructions.clear();
         getIntent();
     }
 
@@ -189,16 +193,19 @@ public class AddRecipe extends AppCompatActivity {
             add_recipe_culture.setError("Required Input");
         }
 
-        if(ingredients.size() == 0)
+        if(ingredients.size() == 0 && TextUtils.isEmpty(amount) || ingredients.size() == 0 && TextUtils.isEmpty(ingName) )
         {
-            add_ingredient_name.setError("Required Input");
-            add_ingredient_amount.setError("Required Input");
+            if (TextUtils.isEmpty(amount)) add_ingredient_amount.setError("Required Input");
+
+           if (TextUtils.isEmpty(ingName)) add_ingredient_name.setError("Required Input");
         }
-        if (instructions.size()==0) {
+        if (instructions.size()==0 && TextUtils.isEmpty(instruction)) {
             add_recipe_instruction.setError("Required Input");
         }
 
-        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(culture) ||ingredients.isEmpty() || instructions.isEmpty() ){
+        if(TextUtils.isEmpty(name) || TextUtils.isEmpty(culture) ||
+                (ingredients.isEmpty() && (TextUtils.isEmpty(ingName)||TextUtils.isEmpty(amount)) ) ||
+                (instructions.isEmpty() && TextUtils.isEmpty(instruction)) ){
             return "error";
         }
 

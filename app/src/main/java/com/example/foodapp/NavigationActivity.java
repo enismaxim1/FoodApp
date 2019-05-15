@@ -92,10 +92,6 @@ public class NavigationActivity extends AppCompatActivity
         MainActivity.readRecipe();
 
         //TextView text = findViewById(R.id.recipe);
-        String a = "";
-        for(int i=0; i<recipes.size(); i++){
-            a+=recipes.get(i).getName();
-        }
         //text.setText(a);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);

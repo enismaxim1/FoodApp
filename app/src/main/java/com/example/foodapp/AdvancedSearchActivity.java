@@ -46,7 +46,11 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         TextView excludeIngredientsList = findViewById(R.id.ingredients_list2);
         excludeIngredientsList.setText("Ingredients List:");
     }
-    //adds an ingredient to the includesearch
+
+    /**adds an ingredient to the includesearch
+     *
+     * @param v view
+     */
     public void addIngredient(View v) {
         @SuppressLint("WrongViewCast") EditText add_ingredient_name = findViewById(R.id.ingredient1_name);
         String ingName = add_ingredient_name.getText().toString();
@@ -77,7 +81,11 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             ingredientsList.setText("Ingredients List: " + Arrays.toString(str));
         }
     }
-    //adds an ingredient to the excludesearch
+
+    /**adds an ingredient to the excludesearch
+     *
+     * @param v view
+     */
     public void excludeIngredient(View v) {
         @SuppressLint("WrongViewCast") EditText add_ingredient_name = findViewById(R.id.ingredient2_name);
         String ingName = add_ingredient_name.getText().toString();
@@ -108,7 +116,6 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             ingredientsList2.setText("Ingredients List: " + Arrays.toString(str));
         }
     }
-    //onclick of the search button
     public void initiateSearch(View v){
         EditText name = findViewById(R.id.recipe_name);
         recipeName = name.getText().toString();
@@ -123,6 +130,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         makeEmpty = false;
         Log.d(TAG, button.isChecked() +"");
         Log.d(TAG, searchOnly +"");
+        //intents are responsible for retrieving the search results in the SearchActivity
         Intent intent = new Intent(this, SearchActivity.class);
         intent.putExtra("recipeName", recipeName);
         intent.putExtra("recipeCulture", recipeCulture);

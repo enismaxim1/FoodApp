@@ -16,25 +16,30 @@ public class FullRecipe extends AppCompatActivity {
     ArrayList<Instruction> directions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
         setContentView(R.layout.activity_full_recipe);
+
         getIntent();
         pos = getIntent().getIntExtra("position", 0);
         Recipe r = ShowRecipeAdapter.recipeList.get(pos);
         name = r.getName();
         culture = r.getCulture();
         ingredients = (ArrayList<Ingredient>)r.getIngredients().clone();
-        directions = (ArrayList<Instruction>)r.getDirections();
+        directions = r.getDirections();
+
         TextView nameView = findViewById(R.id.name);
         TextView cultureView = findViewById(R.id.culture);
         TextView ingredientView = findViewById(R.id.ingredient);
         TextView directionView = findViewById(R.id.direction);
         nameView.setText(name);
         cultureView.setText(culture);
+        //Writes the ingredients of the recipe to the page
         for (Ingredient i : ingredients){
             ingredientView.append(i.toString() + "\n");
         }
+        //Writes the directions of the recipe to the page
         for (int i=0; i<directions.size();i++){
             directionView.append((i+1) + ". " + directions.get(i).getDirection() + "\n");
         }
